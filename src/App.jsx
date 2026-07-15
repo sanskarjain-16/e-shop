@@ -1,5 +1,5 @@
 
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import ProductDetails from './pages/ProductDetails';
@@ -9,6 +9,7 @@ import OrderHistory from './pages/OrderHistory';
 
 function App() {
   return (
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -19,6 +20,7 @@ function App() {
           <Route path="*" element={<div className="text-center py-20 font-semibold text-gray-500">Page Not Found 404</div>} />
         </Route>
       </Routes>
+      </BrowserRouter>
   );
 }
 
